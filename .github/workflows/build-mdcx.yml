@@ -67,7 +67,7 @@ jobs:
           fi
 
           if [[ -z "$SRC_REPO" ]]; then
-            SRC_REPO='sqzw-x/mdcx'
+            SRC_REPO='1525745393/mdcx-AI'
           fi
 
           if [[ -n "$SRC_TAG" ]]; then

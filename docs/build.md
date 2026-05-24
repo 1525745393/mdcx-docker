@@ -40,12 +40,12 @@
 
 ```bash
 # 0) 前置：准备源码并登录镜像仓库
-bash prepare-src.sh --context build-mdcx --repo Hazard804/mdcx --tag latest
+bash prepare-src.sh --context build-mdcx --repo 1525745393/mdcx-AI --tag latest
 docker login
 
 # 1) 统一版本变量（示例）
 export BASE_TAG=v2-latest-pyqt6
-export BIN_TAG=v2-hazard804-latest-pyqt6
+export BIN_TAG=v2-mdcx-ai-latest-pyqt6
 export PLATFORMS=linux/amd64,linux/arm64
 ```
 
@@ -137,7 +137,7 @@ docker buildx imagetools inspect stainless403/mdcx-builtin-gui-base:v2-latest-py
 ### 准备源码
 
 ```bash
-bash prepare-src.sh --context build-mdcx --repo Hazard804/mdcx --tag latest
+bash prepare-src.sh --context build-mdcx --repo 1525745393/mdcx-AI --tag latest
 ```
 
 ### build-mdcx-base镜像
@@ -158,7 +158,7 @@ docker buildx build \
   --platform linux/amd64 \
   --build-arg BASE_IMAGE_TAG \
   --load \
-  -t stainless403/build-mdcx:v2-hazard804-amd64-pyqt6 \
+  -t stainless403/build-mdcx:v2-mdcx-ai-amd64-pyqt6 \
   -f build-mdcx/Dockerfile.build-mdcx .
 ```
 
@@ -177,7 +177,7 @@ docker buildx build \
 ### mdcx-builtin-gui-base镜像
 
 ```bash
-export MDCX_BIN_IMAGE_TAG=v2-hazard804-amd64-pyqt6
+export MDCX_BIN_IMAGE_TAG=v2-mdcx-ai-amd64-pyqt6
 export BASE_IMAGE_TAG=v2-amd64-pyqt6
 docker buildx build \
   --platform linux/amd64 \
@@ -193,7 +193,7 @@ docker buildx build \
 > TODO: 暂时未测试构建。
 
 ```bash
-export MDCX_BIN_IMAGE_TAG=v2-hazard804-amd64-pyqt6
+export MDCX_BIN_IMAGE_TAG=v2-mdcx-ai-amd64-pyqt6
 docker buildx build \
   --platform linux/amd64 \
   --build-arg MDCX_BIN_IMAGE_TAG \
@@ -212,7 +212,7 @@ docker buildx build \
 
 ```bash
 # 1) 准备源码
-bash prepare-src.sh --context build-mdcx --repo Hazard804/mdcx --tag latest
+bash prepare-src.sh --context build-mdcx --repo 1525745393/mdcx-AI --tag latest
 
 # 2) 确认 buildx 可用
 docker buildx version
@@ -233,7 +233,7 @@ docker run --privileged --rm tonistiigi/binfmt --install all
 export ARCH=amd64
 export PLATFORM=linux/amd64
 export BASE_TAG=v2-${ARCH}-pyqt6
-export BIN_TAG=v2-hazard804-${ARCH}-pyqt6
+export BIN_TAG=v2-mdcx-ai-${ARCH}-pyqt6
 
 # build-mdcx-base
 docker buildx build \
@@ -273,7 +273,7 @@ docker buildx build \
 export ARCH=arm64
 export PLATFORM=linux/arm64
 export BASE_TAG=v2-${ARCH}-pyqt6
-export BIN_TAG=v2-hazard804-${ARCH}-pyqt6
+export BIN_TAG=v2-mdcx-ai-${ARCH}-pyqt6
 
 # build-mdcx-base
 docker buildx build \
@@ -331,12 +331,12 @@ docker image ls | rg 'build-mdcx|gui-base|mdcx-builtin-gui-base'
 
 # 验证内置镜像可启动二进制（amd64 示例）
 docker run --rm --platform linux/amd64 \
-  stainless403/mdcx-builtin-gui-base:v2-hazard804-amd64-pyqt6 \
+  stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-amd64-pyqt6 \
   cat /app-version
 
 # 验证内置镜像可启动二进制（arm64 示例）
 docker run --rm --platform linux/arm64 \
-  stainless403/mdcx-builtin-gui-base:v2-hazard804-arm64-pyqt6 \
+  stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-arm64-pyqt6 \
   cat /app-version
 ```
 

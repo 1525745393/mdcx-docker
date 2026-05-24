@@ -30,6 +30,18 @@ ARG PYPI_MIRROR
 # ARG DEFAULT_MIRROR=""
 ENV PYPI_MIRROR=${PYPI_MIRROR:-${DEFAULT_MIRROR}}
 
+# 移除上游 pyproject.toml 中的 required-environments 限制
+# 上游仅声明了 x86_64 等平台，ARM64 构建时 uv sync 会拒绝安装
+# 实际依赖在 ARM64 下均可正常工作，此处仅解除环境检查
+RUN python3 -c "
+import re
+with open('pyproject.toml', 'r') as f:
+    content = f.read()
+content = re.sub(r'required-environments\s*=\s*\[[\s\S]*?\]', '# required-environments removed for multi-arch build', content)
+with open('pyproject.toml', 'w') as f:
+    f.write(content)
+"
+
 # 安装依赖
 RUN uv sync --all-extras --dev && \
   uv pip install -e .
@@ -52,6 +64,28 @@ RUN echo "PYPI_MIRROR: $PYPI_MIRROR" && \
   --hidden-import PIL.ImageFilter \
   --hidden-import PIL._imaging \
   --hidden-import PyQt6 \
+  --hidden-import httpx \
+  --hidden-import h11 \
+  --hidden-import h2 \
+  --hidden-import hyperframe \
+  --hidden-import parsel \
+  --hidden-import pydantic_settings \
+  --hidden-import openai \
+  --hidden-import openai.types.chat \
+  --hidden-import cv2 \
+  --hidden-import lxml \
+  --hidden-import lxml.etree \
+  --hidden-import jinja2 \
+  --hidden-import jinja2.sandbox \
+  --hidden-import aiofiles \
+  --hidden-import aiolimiter \
+  --hidden-import av \
+  --hidden-import bs4 \
+  --hidden-import oshash \
+  --hidden-import ping3 \
+  --hidden-import pydantic \
+  --hidden-import zhconv \
+  --hidden-import numpy \
   --collect-all PyQt6 \
   --collect-all curl_cffi && \
   # 保存版本信息

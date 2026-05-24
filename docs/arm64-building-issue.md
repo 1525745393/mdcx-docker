@@ -369,7 +369,7 @@ Python 3.13 引入了 C API 变化：
 
 ```
 # Docker 会自动使用 QEMU emulation
-docker run --platform linux/amd64 stainless403/mdcx-builtin-gui-base:v2-hazard804-amd64
+docker run --platform linux/amd64 stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-amd64
 ```
 
 **性能影响**:

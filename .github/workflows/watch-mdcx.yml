@@ -15,7 +15,7 @@ on:
         default: true
 
 env:
-  RELEASE_URL: 'https://api.github.com/repos/sqzw-x/mdcx/releases/latest'
+  RELEASE_URL: 'https://api.github.com/repos/1525745393/mdcx-AI/releases/latest'
   ENABLE_WATCH: ${{ vars.ENABLE_WATCH_MDCX_RELEASE }}
   MDCX_TAG: ${{ vars.MDCX_TAG }}
   MDCX_SRC_TAG: ${{ vars.MDCX_SRC_TAG }}
@@ -74,7 +74,7 @@ jobs:
             TAG_NAME="${{ env.MDCX_TAG }}"
           fi
           if [[ -z "$REPO" ]]; then
-            REPO='sqzw-x/mdcx'
+            REPO='1525745393/mdcx-AI'
           fi
           if [[ -z "$TAG_NAME" ]]; then
             if [[ "$REPO" == "sqzw-x/mdcx" ]]; then

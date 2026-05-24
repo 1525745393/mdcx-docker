@@ -1,5 +1,12 @@
 ## 更新日志
 
+### [v0.10.0] - 2026-05-24
+- 1.上游源码项目更改为 [1525745393/mdcx-AI](https://github.com/1525745393/mdcx-AI)
+- 2.更新默认 Release tag 策略：`1525745393/mdcx-AI` 使用 `latest`（非 `daily_release`）
+- 3.补充 PyInstaller hidden-import 以适配新仓库依赖（httpx、openai、cv2、parsel、pydantic_settings、lxml、jinja2 等）
+- 4.更新构建文档、CI 工作流和配置模板中的源码仓库引用
+- 5.更新 MDCx 应用版本至 220260533
+
 ### [v0.9.1] - 2026-05-17
 - 1.统一 MDCx v2 默认配置文件路径为 `config.v2.json`。
 - 2.更新部署文档与 Dockerfile，移除手动创建空配置文件的步骤。

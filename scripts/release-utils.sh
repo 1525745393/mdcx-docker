@@ -123,8 +123,8 @@ fetch_release_info() {
 #   "tag_name": "v1.0.0",
 #   "published_at": "2022-01-01T00:00:00Z",
 #   "release_version": "120220101",
-#   "tar_url": "https://api.github.com/repos/sqzw-x/mdcx/tarball/daily_release",
-#   "zip_url": "https://api.github.com/repos/sqzw-x/mdcx/zipball/daily_release"
+#   "tar_url": "https://api.github.com/repos/1525745393/mdcx-AI/tarball/daily_release",
+#   "zip_url": "https://api.github.com/repos/1525745393/mdcx-AI/zipball/daily_release"
 # }
 get_release_info() {
   local repo="$1"

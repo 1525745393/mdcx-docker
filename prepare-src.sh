@@ -5,12 +5,16 @@
 # UPDATE 2023-12-24 17:08:03 使用新的源码仓库:https://github.com/sqzw-x/mdcx
 # UPDATE 2024-05-28 21:28:01 sqzw-x/mdcx目前基本只进行daily_release构建
 # UPDATE 2026-03-29 20:46:30 dynamic repo
+# UPDATE 2026-05-24 上游源码项目更改为 https://github.com/1525745393/mdcx-AI
 
 get_default_release_tag_by_repo() {
   local target_repo="$1"
   case "$target_repo" in
     sqzw-x/mdcx)
       echo "daily_release"
+      ;;
+    1525745393/mdcx-AI)
+      echo "latest"
       ;;
     *)
       echo "latest"
@@ -124,8 +128,8 @@ fetch_release_info() {
 #   "tag_name": "v1.0.0",
 #   "published_at": "2022-01-01T00:00:00Z",
 #   "release_version": "120220101",
-#   "tar_url": "https://api.github.com/repos/sqzw-x/mdcx/tarball/daily_release",
-#   "zip_url": "https://api.github.com/repos/sqzw-x/mdcx/zipball/daily_release"
+#   "tar_url": "https://api.github.com/repos/1525745393/mdcx-AI/tarball/daily_release",
+#   "zip_url": "https://api.github.com/repos/1525745393/mdcx-AI/zipball/daily_release"
 # }
 get_release_info() {
   local repo="$1"
@@ -195,7 +199,7 @@ print_help() {
   echo "用法: $0 [--context <context>] [--tag <release_tag>] [--repo <owner/repo>] [--token <github_token>] [--verbose] [--dry]"
   echo "  --context <context>   指定源码解压目录，默认为当前目录"
   echo "  --tag <release_tag>   指定要下载的版本标签；不指定时按repo自动选择，也可用 .env/环境变量MDCX_SRC_TAG"
-  echo "  --repo <owner/repo>   指定源码仓库，默认'sqzw-x/mdcx'，也可用 .env/环境变量MDCX_SRC_REPO"
+  echo "  --repo <owner/repo>   指定源码仓库，默认'1525745393/mdcx-AI'，也可用 .env/环境变量MDCX_SRC_REPO"
   echo "  --token <github_token> 指定GitHub Token以避免API速率限制，也可用环境变量GITHUB_TOKEN"
   echo "  --verbose             显示详细的下载过程"
   echo "  --dry                 只进行检查，不实际下载"
@@ -218,7 +222,7 @@ load_defaults() {
   fi
 
   release_tag="${MDCX_SRC_TAG:-}"
-  default_repo="sqzw-x/mdcx"
+  default_repo="1525745393/mdcx-AI"
   repo="${MDCX_SRC_REPO:-$default_repo}"
   github_token="${GITHUB_TOKEN:-}"
 }
