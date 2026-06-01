@@ -50,7 +50,9 @@ RUN apt-get update && \
 
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
 
-RUN sh /uv-installer.sh && rm /uv-installer.sh
+RUN sh /uv-installer.sh && rm /uv-installer.sh && \
+    ln -sf /root/.local/bin/uv /usr/local/bin/uv && \
+    ln -sf /root/.local/bin/uvx /usr/local/bin/uvx
 
 ENV PATH="/root/.local/bin/:$PATH"
 
