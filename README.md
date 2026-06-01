@@ -5,7 +5,7 @@
 
 📢 上游源码项目已更改为 [1525745393/mdcx-AI](https://github.com/1525745393/mdcx-AI)
 
-📢 最新的镜像TAG为 `v2-latest`
+📢 最新的镜像TAG为 `v2-latest-pyqt6`
 
 
 ---
