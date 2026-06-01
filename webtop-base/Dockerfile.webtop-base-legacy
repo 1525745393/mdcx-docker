@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1.4
 
 ARG BASE_IMAGE_TAG=ubuntu-kde-22.04
-FROM stainless403/webtop:$BASE_IMAGE_TAG
+FROM 1525745393/webtop:$BASE_IMAGE_TAG
 
-LABEL maintainer="stainless403"
-LABEL description="base on stainless403/webtop:$BASE_IMAGE_TAG"
+LABEL maintainer="1525745393"
+LABEL description="base on 1525745393/webtop:$BASE_IMAGE_TAG"
 
 ARG TARGETPLATFORM
 ARG TARGETOS

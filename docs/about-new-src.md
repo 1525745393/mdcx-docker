@@ -47,7 +47,7 @@ docker-cli方式，适用于`mdcx-builtin-gui-base`
 ```shell
 cd /path/to/mdcx-docker
 # 拉取新版镜像
-docker pull stainless403/mdcx-builtin-gui-base:latest
+docker pull 1525745393/mdcx-builtin-gui-base:latest
 # 停止并删除容器，容器名称请根据实际情况修改
 docker stop mdcx_builtin_gui
 docker rm mdcx_builtin_gui
@@ -59,7 +59,7 @@ docker-cli方式，适用于`mdcx-builtin-webtop-base`
 ```shell
 cd /path/to/mdcx-docker
 # 拉取新版镜像
-docker pull stainless403/mdcx-builtin-webtop-base:latest
+docker pull 1525745393/mdcx-builtin-webtop-base:latest
 # 停止并删除容器，容器名称请根据实际情况修改
 docker stop mdcx_builtin_webtop
 docker rm mdcx_builtin_webtop

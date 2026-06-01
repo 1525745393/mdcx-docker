@@ -105,7 +105,7 @@ if [ -x "${fpath}" ] && [ $(( $(stat -c "%a" "${fpath}") & 111 )) -ne 0 ]; then
 在你的 Dockerfile 中覆写 `/init` 并复制替换：
 
 ```dockerfile
-FROM stainless403/mdcx-builtin-gui-base:v2-latest-dev
+FROM 1525745393/mdcx-builtin-gui-base:v2-latest-dev
 
 # 将你修改过的 init 放入镜像以覆盖原始 /init
 COPY init_modified.sh /init

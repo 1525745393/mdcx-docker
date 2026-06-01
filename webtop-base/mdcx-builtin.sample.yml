@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mdcx:
-    image: stainless403/mdcx-builtin-webtop-base:${MDCX_BUILTIN_IMAGE_TAG}
+    image: 1525745393/mdcx-builtin-webtop-base:${MDCX_BUILTIN_IMAGE_TAG}
     container_name: ${MDCX_CONTAINER_NAME}
     env_file:
       - .env

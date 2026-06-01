@@ -4,13 +4,13 @@ ARG BASE_IMAGE_TAG="v2-latest-pyqt6"
 
 # 已编译应用的镜像tag
 ARG MDCX_BIN_IMAGE_TAG="v2-latest-pyqt6"
-FROM stainless403/build-mdcx:$MDCX_BIN_IMAGE_TAG AS provider
+FROM 1525745393/build-mdcx:$MDCX_BIN_IMAGE_TAG AS provider
 
 
-FROM stainless403/gui-base:$BASE_IMAGE_TAG
+FROM 1525745393/gui-base:$BASE_IMAGE_TAG
 
-LABEL maintainer="stainless403"
-LABEL description="base on stainless403/gui-base:$BASE_IMAGE_TAG"
+LABEL maintainer="1525745393"
+LABEL description="base on 1525745393/gui-base:$BASE_IMAGE_TAG"
 
 ARG APP_NAME="MDCx"
 ARG APP_VERSION="220260411_beta"

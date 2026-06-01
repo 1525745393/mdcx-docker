@@ -54,7 +54,7 @@ export PLATFORMS=linux/amd64,linux/arm64
 docker buildx build \
   --platform ${PLATFORMS} \
   --push \
-  -t stainless403/build-mdcx-base:${BASE_TAG} \
+  -t 1525745393/build-mdcx-base:${BASE_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx-base .
 
 # 3) build-mdcx（单标签多架构）
@@ -62,14 +62,14 @@ docker buildx build \
   --platform ${PLATFORMS} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --push \
-  -t stainless403/build-mdcx:${BIN_TAG} \
+  -t 1525745393/build-mdcx:${BIN_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx .
 
 # 4) gui-base（单标签多架构）
 docker buildx build \
   --platform ${PLATFORMS} \
   --push \
-  -t stainless403/gui-base:${BASE_TAG} \
+  -t 1525745393/gui-base:${BASE_TAG} \
   -f gui-base/Dockerfile.gui-base .
 
 # 5) webtop-base（单标签多架构）
@@ -77,7 +77,7 @@ docker buildx build \
   --platform ${PLATFORMS} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --push \
-  -t stainless403/webtop-base:${BASE_TAG} \
+  -t 1525745393/webtop-base:${BASE_TAG} \
   -f webtop-base/Dockerfile.webtop-base .
 
 # 6) mdcx-builtin-gui-base（单标签多架构）
@@ -86,7 +86,7 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG=${BIN_TAG} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --push \
-  -t stainless403/mdcx-builtin-gui-base:${BIN_TAG} \
+  -t 1525745393/mdcx-builtin-gui-base:${BIN_TAG} \
   -f gui-base/Dockerfile.mdcx-builtin-gui-base .
 
 # 7) mdcx-builtin-webtop-base（单标签多架构）
@@ -95,7 +95,7 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG=${BIN_TAG} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --push \
-  -t stainless403/mdcx-builtin-webtop-base:${BIN_TAG} \
+  -t 1525745393/mdcx-builtin-webtop-base:${BIN_TAG} \
   -f webtop-base/Dockerfile.mdcx-builtin-webtop-base .
 ```
 
@@ -108,9 +108,9 @@ docker buildx build \
 发布后可用以下方式确认 tag 已包含双架构：
 
 ```bash
-docker buildx imagetools inspect stainless403/build-mdcx:v2-latest-pyqt6
-docker buildx imagetools inspect stainless403/gui-base:v2-latest-pyqt6
-docker buildx imagetools inspect stainless403/mdcx-builtin-gui-base:v2-latest-pyqt6
+docker buildx imagetools inspect 1525745393/build-mdcx:v2-latest-pyqt6
+docker buildx imagetools inspect 1525745393/gui-base:v2-latest-pyqt6
+docker buildx imagetools inspect 1525745393/mdcx-builtin-gui-base:v2-latest-pyqt6
 ```
 
 期望输出中包含：
@@ -146,7 +146,7 @@ bash prepare-src.sh --context build-mdcx --repo 1525745393/mdcx-AI --tag latest
 docker buildx build \
   --platform linux/amd64 \
   --load \
-  -t stainless403/build-mdcx-base:v2-amd64-pyqt6 \
+  -t 1525745393/build-mdcx-base:v2-amd64-pyqt6 \
   -f build-mdcx/Dockerfile.build-mdcx-base .
 ```
 
@@ -158,7 +158,7 @@ docker buildx build \
   --platform linux/amd64 \
   --build-arg BASE_IMAGE_TAG \
   --load \
-  -t stainless403/build-mdcx:v2-mdcx-ai-amd64-pyqt6 \
+  -t 1525745393/build-mdcx:v2-mdcx-ai-amd64-pyqt6 \
   -f build-mdcx/Dockerfile.build-mdcx .
 ```
 
@@ -168,7 +168,7 @@ docker buildx build \
 docker buildx build \
   --platform linux/amd64 \
   --load \
-  -t stainless403/gui-base:v2-amd64-pyqt6 \
+  -t 1525745393/gui-base:v2-amd64-pyqt6 \
   -f gui-base/Dockerfile.gui-base .
 ```
 
@@ -184,7 +184,7 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG \
   --build-arg BASE_IMAGE_TAG \
   --load \
-  -t stainless403/mdcx-builtin-gui-base:$MDCX_BIN_IMAGE_TAG \
+  -t 1525745393/mdcx-builtin-gui-base:$MDCX_BIN_IMAGE_TAG \
   -f gui-base/Dockerfile.mdcx-builtin-gui-base .
 ```
 
@@ -198,7 +198,7 @@ docker buildx build \
   --platform linux/amd64 \
   --build-arg MDCX_BIN_IMAGE_TAG \
   --load \
-  -t stainless403/mdcx-builtin-webtop-base:$MDCX_BIN_IMAGE_TAG \
+  -t 1525745393/mdcx-builtin-webtop-base:$MDCX_BIN_IMAGE_TAG \
   -f webtop-base/Dockerfile.mdcx-builtin-webtop-base .
 ```
 
@@ -239,7 +239,7 @@ export BIN_TAG=v2-mdcx-ai-${ARCH}-pyqt6
 docker buildx build \
   --platform ${PLATFORM} \
   --load \
-  -t stainless403/build-mdcx-base:${BASE_TAG} \
+  -t 1525745393/build-mdcx-base:${BASE_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx-base .
 
 # build-mdcx
@@ -247,14 +247,14 @@ docker buildx build \
   --platform ${PLATFORM} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --load \
-  -t stainless403/build-mdcx:${BIN_TAG} \
+  -t 1525745393/build-mdcx:${BIN_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx .
 
 # gui-base
 docker buildx build \
   --platform ${PLATFORM} \
   --load \
-  -t stainless403/gui-base:${BASE_TAG} \
+  -t 1525745393/gui-base:${BASE_TAG} \
   -f gui-base/Dockerfile.gui-base .
 
 # mdcx-builtin-gui-base
@@ -263,7 +263,7 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG=${BIN_TAG} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --load \
-  -t stainless403/mdcx-builtin-gui-base:${BIN_TAG} \
+  -t 1525745393/mdcx-builtin-gui-base:${BIN_TAG} \
   -f gui-base/Dockerfile.mdcx-builtin-gui-base .
 ```
 
@@ -279,7 +279,7 @@ export BIN_TAG=v2-mdcx-ai-${ARCH}-pyqt6
 docker buildx build \
   --platform ${PLATFORM} \
   --load \
-  -t stainless403/build-mdcx-base:${BASE_TAG} \
+  -t 1525745393/build-mdcx-base:${BASE_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx-base .
 
 # build-mdcx
@@ -287,14 +287,14 @@ docker buildx build \
   --platform ${PLATFORM} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --load \
-  -t stainless403/build-mdcx:${BIN_TAG} \
+  -t 1525745393/build-mdcx:${BIN_TAG} \
   -f build-mdcx/Dockerfile.build-mdcx .
 
 # gui-base
 docker buildx build \
   --platform ${PLATFORM} \
   --load \
-  -t stainless403/gui-base:${BASE_TAG} \
+  -t 1525745393/gui-base:${BASE_TAG} \
   -f gui-base/Dockerfile.gui-base .
 
 # mdcx-builtin-gui-base
@@ -303,14 +303,14 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG=${BIN_TAG} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --load \
-  -t stainless403/mdcx-builtin-gui-base:${BIN_TAG} \
+  -t 1525745393/mdcx-builtin-gui-base:${BIN_TAG} \
   -f gui-base/Dockerfile.mdcx-builtin-gui-base .
 
 # webtop-base
 docker buildx build \
   --platform ${PLATFORM} \
   --load \
-  -t stainless403/webtop-base:${BASE_TAG} \
+  -t 1525745393/webtop-base:${BASE_TAG} \
   -f webtop-base/Dockerfile.webtop-base .
 
 # mdcx-builtin-webtop-base
@@ -319,7 +319,7 @@ docker buildx build \
   --build-arg MDCX_BIN_IMAGE_TAG=${BIN_TAG} \
   --build-arg BASE_IMAGE_TAG=${BASE_TAG} \
   --load \
-  -t stainless403/mdcx-builtin-webtop-base:${BIN_TAG} \
+  -t 1525745393/mdcx-builtin-webtop-base:${BIN_TAG} \
   -f webtop-base/Dockerfile.mdcx-builtin-webtop-base .
 ```
 
@@ -331,12 +331,12 @@ docker image ls | rg 'build-mdcx|gui-base|mdcx-builtin-gui-base'
 
 # 验证内置镜像可启动二进制（amd64 示例）
 docker run --rm --platform linux/amd64 \
-  stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-amd64-pyqt6 \
+  1525745393/mdcx-builtin-gui-base:v2-mdcx-ai-amd64-pyqt6 \
   cat /app-version
 
 # 验证内置镜像可启动二进制（arm64 示例）
 docker run --rm --platform linux/arm64 \
-  stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-arm64-pyqt6 \
+  1525745393/mdcx-builtin-gui-base:v2-mdcx-ai-arm64-pyqt6 \
   cat /app-version
 ```
 

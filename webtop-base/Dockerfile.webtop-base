@@ -3,7 +3,7 @@
 ARG BASE_IMAGE_TAG=ubuntu-kde-version-409dbb60
 FROM linuxserver/webtop:$BASE_IMAGE_TAG
 
-LABEL maintainer="stainless403"
+LABEL maintainer="1525745393"
 LABEL description="base on linuxserver/webtop:$BASE_IMAGE_TAG"
 
 ARG TARGETPLATFORM

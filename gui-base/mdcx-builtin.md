@@ -1,7 +1,7 @@
-[![GitHub stars](https://img.shields.io/github/stars/northsea4/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/northsea4/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/northsea4/mdcx-docker.svg?style=flat&label=Release)](https://github.com/northsea4/mdcx-docker/releases/tag/latest) [![Docker Pulls](https://img.shields.io/docker/pulls/stainless403/mdcx-builtin-gui-base.svg?style=flat&label=DockerHub&nbsp;mdcx-builtin-gui-base)](https://hub.docker.com/r/stainless403/mdcx-builtin-gui-base/)
+[![GitHub stars](https://img.shields.io/github/stars/northsea4/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/northsea4/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/northsea4/mdcx-docker.svg?style=flat&label=Release)](https://github.com/northsea4/mdcx-docker/releases/tag/latest) [![Docker Pulls](https://img.shields.io/docker/pulls/1525745393/mdcx-builtin-gui-base.svg?style=flat&label=DockerHub&nbsp;mdcx-builtin-gui-base)](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base/)
 
 ## 0. 关于镜像
-[stainless403/mdcx-builtin-gui-base](https://hub.docker.com/r/stainless403/mdcx-builtin-gui-base)，是基于 [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui) 构建的适合python+PyQt6应用运行的镜像。
+[1525745393/mdcx-builtin-gui-base](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base)，是基于 [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui) 构建的适合python+PyQt6应用运行的镜像。
 
 > 优点是`轻量`，缺点是只支持通过网页查看，且没有文件管理。
 
@@ -24,7 +24,7 @@ bash -c "$(wget https://raw.githubusercontent.com/northsea4/mdcx-docker/main/ins
 > 以下的步骤是手动部署的详细说明，即使使用了脚本部署，也请务必阅读一下了解更多细节，如安全、更新等。
 
 
-[stainless403/mdcx-builtin-gui-base](https://hub.docker.com/r/stainless403/mdcx-builtin-gui-base)镜像已内置编译好的MDCx，直接部署即可使用。
+[1525745393/mdcx-builtin-gui-base](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base)镜像已内置编译好的MDCx，直接部署即可使用。
 
 
 ### 1.1 准备项目目录
@@ -70,7 +70,7 @@ version: '3'
 
 services:
   mdcx:
-    image: stainless403/mdcx-builtin-gui-base:${MDCX_BUILTIN_IMAGE_TAG}
+    image: 1525745393/mdcx-builtin-gui-base:${MDCX_BUILTIN_IMAGE_TAG}
     container_name: ${MDCX_CONTAINER_NAME}
     env_file:
       - .env
@@ -137,7 +137,7 @@ docker run -d --name mdcx \
   -e USER_ID=$(id -u) `#运行应用的用户ID` \
   -e GROUP_ID=$(id -g) `#运行应用的用户组ID` \
   --restart unless-stopped \
-  stainless403/mdcx-builtin-gui-base:latest
+  1525745393/mdcx-builtin-gui-base:latest
 ```
 
 

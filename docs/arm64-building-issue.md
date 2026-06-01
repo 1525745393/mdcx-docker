@@ -236,7 +236,7 @@ Installed 2 packages
 
 ```
 $ docker run --rm --platform linux/arm64 \
-    stainless403/build-mdcx-base:v2-arm64-py312 \
+    1525745393/build-mdcx-base:v2-arm64-py312 \
     sh -c "cd /tmp && uv venv test && . test/bin/activate && \
            uv pip install PyQt5==5.15.11 --dry-run"
 
@@ -249,7 +249,7 @@ it doesn't have a source distribution or wheel for the current platform
 
 ```
 $ docker run --rm --platform linux/arm64 \
-    stainless403/build-mdcx-base:v2-arm64-py312 \
+    1525745393/build-mdcx-base:v2-arm64-py312 \
     sh -c "python3 --version && \
            python3 -c 'import PyQt5.QtCore; print(PyQt5.QtCore.QT_VERSION_STR)'"
 
@@ -259,7 +259,7 @@ Python 3.12.3
 ✅ 系统 Python 3.12 可以使用 PyQt5
 
 $ docker run --rm --platform linux/arm64 \
-    stainless403/build-mdcx-base:v2-arm64-py312 \
+    1525745393/build-mdcx-base:v2-arm64-py312 \
     sh -c "cd /tmp && uv venv --python 3.13 test && . test/bin/activate && \
            python -c 'import sys; sys.path.append(\"/usr/lib/python3/dist-packages\"); \
            import PyQt5.QtCore'"
@@ -275,7 +275,7 @@ ModuleNotFoundError: No module named 'PyQt5.sip'
 
 ```
 $ docker run --rm --platform linux/arm64 \
-    stainless403/build-mdcx-base:v2-arm64-py312 \
+    1525745393/build-mdcx-base:v2-arm64-py312 \
     sh -c "cd /tmp && uv venv test && . test/bin/activate && \
            time uv pip install PyQt5-sip==12.15.0"
 
@@ -294,7 +294,7 @@ Building wheel for PyQt5-sip (setup.py) ... [running]
 
 ```
 $ docker run --rm --platform linux/arm64 \
-    stainless403/build-mdcx-base:v2-arm64-py312 \
+    1525745393/build-mdcx-base:v2-arm64-py312 \
     sh -c "cd /tmp && uv venv test && . test/bin/activate && \
            uv pip install PyQt6 && \
            python -c 'from PyQt6.QtCore import QT_VERSION_STR; \
@@ -369,7 +369,7 @@ Python 3.13 引入了 C API 变化：
 
 ```
 # Docker 会自动使用 QEMU emulation
-docker run --platform linux/amd64 stainless403/mdcx-builtin-gui-base:v2-mdcx-ai-amd64
+docker run --platform linux/amd64 1525745393/mdcx-builtin-gui-base:v2-mdcx-ai-amd64
 ```
 
 **性能影响**:

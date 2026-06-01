@@ -2,7 +2,7 @@ blank_issues_enabled: false
 contact_links:
 
   - name: Docker Hub
-    url: https://hub.docker.com/u/stainless403
+    url: https://hub.docker.com/u/1525745393
     about: 镜像托管之处
 
   - name: 文档
