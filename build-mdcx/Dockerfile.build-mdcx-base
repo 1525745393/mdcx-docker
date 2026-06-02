@@ -59,5 +59,7 @@ RUN sh /uv-installer.sh && rm /uv-installer.sh && \
 
 ENV PATH="/root/.local/bin/:$PATH"
 
-# 安装Python 3.13
-RUN uv python install 3.13
+# 安装Python 3.13 并创建 python3 符号链接
+RUN uv python install 3.13 && \
+    ln -sf /root/.local/bin/python3.13 /usr/local/bin/python3 && \
+    ln -sf /root/.local/bin/python3.13 /usr/local/bin/python
