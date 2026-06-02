@@ -33,14 +33,7 @@ ENV PYPI_MIRROR=${PYPI_MIRROR:-${DEFAULT_MIRROR}}
 # 移除上游 pyproject.toml 中的 required-environments 限制
 # 上游仅声明了 x86_64 等平台，ARM64 构建时 uv sync 会拒绝安装
 # 实际依赖在 ARM64 下均可正常工作，此处仅解除环境检查
-RUN python3 <<EOF
-import re
-with open('pyproject.toml', 'r') as f:
-    content = f.read()
-content = re.sub(r'required-environments\s*=\s*\[[\s\S]*?\]', '# required-environments removed for multi-arch build', content)
-with open('pyproject.toml', 'w') as f:
-    f.write(content)
-EOF
+RUN python3 -c "import re;open('pyproject.toml','w').write(re.sub(r'required-environments\s*=\s*\[[\s\S]*?\]','# required-environments removed for multi-arch build',open('pyproject.toml','r').read()))"
 
 # 安装依赖
 RUN uv sync --all-extras --dev && \
