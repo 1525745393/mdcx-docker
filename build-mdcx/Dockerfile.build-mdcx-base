@@ -50,6 +50,9 @@ RUN apt-get update && \
 
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
 
+# 设置 HOME 确保安装到 /root/.local/bin
+ENV HOME=/root
+
 RUN sh /uv-installer.sh && rm /uv-installer.sh && \
     ln -sf /root/.local/bin/uv /usr/local/bin/uv && \
     ln -sf /root/.local/bin/uvx /usr/local/bin/uvx
