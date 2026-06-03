@@ -1,4 +1,4 @@
-[![GitHub stars](https://img.shields.io/github/stars/northsea4/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/northsea4/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/northsea4/mdcx-docker.svg?style=flat&label=Release)](https://github.com/northsea4/mdcx-docker/releases/tag/latest) [![Docker Pulls](https://img.shields.io/docker/pulls/1525745393/mdcx-builtin-gui-base.svg?style=flat&label=DockerHub&nbsp;mdcx-builtin-gui-base)](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base/)
+[![GitHub stars](https://img.shields.io/github/stars/1525745393/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/1525745393/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/1525745393/mdcx-docker.svg?style=flat&label=Release)](https://github.com/1525745393/mdcx-docker/releases/tag/latest) [![Docker Pulls](https://img.shields.io/docker/pulls/1525745393/mdcx-builtin-gui-base.svg?style=flat&label=DockerHub&nbsp;mdcx-builtin-gui-base)](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base/)
 
 ## 0. 关于镜像
 [1525745393/mdcx-builtin-gui-base](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base)，是基于 [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui) 构建的适合python+PyQt6应用运行的镜像。
@@ -13,11 +13,11 @@
 
 使用curl：
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/northsea4/mdcx-docker/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/1525745393/mdcx-docker/main/install.sh)"
 ```
 使用wget：
 ```bash
-bash -c "$(wget https://raw.githubusercontent.com/northsea4/mdcx-docker/main/install.sh -O -)"
+bash -c "$(wget https://raw.githubusercontent.com/1525745393/mdcx-docker/main/install.sh -O -)"
 ```
 
 ---
@@ -28,7 +28,7 @@ bash -c "$(wget https://raw.githubusercontent.com/northsea4/mdcx-docker/main/ins
 
 
 ### 1.1 准备项目目录
-下载 [示例项目](https://github.com/northsea4/mdcx-docker/releases/download/latest/template-mdcx-builtin-gui-base.zip)，解压到合适的位置后，进入项目目录。如无特别说明，之后的操作都是在该目录(假设名为`mdcx-docker`)内进行。
+下载 [示例项目](https://github.com/1525745393/mdcx-docker/releases/download/latest/template-mdcx-builtin-gui-base.zip)，解压到合适的位置后，进入项目目录。如无特别说明，之后的操作都是在该目录(假设名为`mdcx-docker`)内进行。
 
 整个项目的结构大致如下：
 ```

@@ -54,13 +54,13 @@ kwriteconfig5 --file $HOME/.config/kscreenlockerrc --group Daemon --key Timeout 
 
 
 ## 选择目录对话框卡顿
-如果你有跟 [这个issue](https://github.com/northsea4/mdcx-docker/issues/16) 相似的情况，即点击诸如「选择目录」进行选择时会卡顿，可以尝试以下方法。
+如果你有跟 [这个issue](https://github.com/1525745393/mdcx-docker/issues/16) 相似的情况，即点击诸如「选择目录」进行选择时会卡顿，可以尝试以下方法。
 进入「设置 - 高级」，找到「选择对话框」，然后勾选「使用 QT 选择对话框」，接着「保存」即可。
 ![image](https://user-images.githubusercontent.com/94440029/230776296-3cba7601-bc14-4e78-a5aa-83913869893b.png)
 
 
 ## 重新部署容器后，黑屏，无法正常进入桌面
-如果你有跟 [这个issue](https://github.com/northsea4/mdcx-docker/issues/17) 相似的情况，即重新部署容器后，无法正常进入桌面，只看到如下图所示的界面(`To run a command as administrator (user "root"), use "sudo <command>".`)。
+如果你有跟 [这个issue](https://github.com/1525745393/mdcx-docker/issues/17) 相似的情况，即重新部署容器后，无法正常进入桌面，只看到如下图所示的界面(`To run a command as administrator (user "root"), use "sudo <command>".`)。
 
 ![image](https://user-images.githubusercontent.com/73220226/232524022-167d8333-62b9-422d-bf90-e0bc07463c73.png)
 
@@ -82,10 +82,10 @@ docker-compose up -d
 
 
 ## 运行失败，提示libQt5Core.so.5不存在
-如果你有跟 [这个issue](https://github.com/northsea4/mdcx-docker/issues/18) 相似的情况，即启动失败或不能进入桌面，查看容器日志有`ImportError: libQt5Core.so.5: cannot open shared object file: No such file or directory`，可以尝试以下处理。
+如果你有跟 [这个issue](https://github.com/1525745393/mdcx-docker/issues/18) 相似的情况，即启动失败或不能进入桌面，查看容器日志有`ImportError: libQt5Core.so.5: cannot open shared object file: No such file or directory`，可以尝试以下处理。
 
 1. 首先你需要使用`mdcx-src-gui-base`或者`mdcx-src-webtop-base`镜像，即源码版；
-2. 修改`.env`文件里的`STRIP_LIBQT5CORE`为`true`。如果在`.env`文件里没有找到这个变量，可以自行添加。[变量说明](https://github.com/northsea4/mdcx-docker/blob/main/gui-base/.env.sample#L58)。
+2. 修改`.env`文件里的`STRIP_LIBQT5CORE`为`true`。如果在`.env`文件里没有找到这个变量，可以自行添加。[变量说明](https://github.com/1525745393/mdcx-docker/blob/main/gui-base/.env.sample#L58)。
 3. 重新部署容器(`docker-compose up -d`)。
 
 

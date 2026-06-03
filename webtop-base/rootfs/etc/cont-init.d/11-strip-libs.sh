@@ -4,7 +4,7 @@
 # Docker 20.10.3-1308
 # arm64
 
-# https://github.com/northsea4/mdcx-docker/issues/18
+# https://github.com/1525745393/mdcx-docker/issues/18
 
 # ImportError: libQt5Core.so.5: cannot open shared object file: No such file or directory
 

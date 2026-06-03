@@ -160,7 +160,7 @@ set_base_by_template() {
 
 download_and_extract_template() {
   #拼接模版文件下载链接
-  DOWNLOAD_URL="https://github.com/northsea4/mdcx-docker/releases/download/latest/template-$TEMPLATE_NAME.zip"
+  DOWNLOAD_URL="https://github.com/1525745393/mdcx-docker/releases/download/latest/template-$TEMPLATE_NAME.zip"
 
   echo "🔗 模版文件下载链接：$DOWNLOAD_URL"
   echo ""

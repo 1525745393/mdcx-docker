@@ -6,7 +6,7 @@
 # Reason: 'error setting certificate verify locations: CAfile: /tmp/_MEIn88rZY/curl_cffi/cacert.pem CApath: none'. 
 # This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
 
-# https://github.com/northsea4/mdcx-docker/issues/25
+# https://github.com/1525745393/mdcx-docker/issues/25
 # https://github.com/yifeikong/curl_cffi/blob/master/Makefile
 # https://github.com/yifeikong/curl_cffi/issues/104
 # https://bobcares.com/blog/curl-error-77-problem-with-the-ssl-ca-cert/

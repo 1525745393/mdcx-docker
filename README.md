@@ -1,4 +1,4 @@
-[![GitHub stars](https://img.shields.io/github/stars/northsea4/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/northsea4/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/northsea4/mdcx-docker.svg?style=flat&label=Release)](https://github.com/northsea4/mdcx-docker/releases/tag/latest)
+[![GitHub stars](https://img.shields.io/github/stars/1525745393/mdcx-docker.svg?style=flat&label=Stars&maxAge=3600)](https://GitHub.com/1525745393/mdcx-docker) [![GitHub release](https://img.shields.io/github/release/1525745393/mdcx-docker.svg?style=flat&label=Release)](https://github.com/1525745393/mdcx-docker/releases/tag/latest)
 
 # MDCx Docker
 
@@ -17,8 +17,8 @@
 
 | 镜像 | 部署说明 | 文件管理 | 浏览器 |
 | --- | --- | --- | --- |
-| [mdcx-builtin-gui-base](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base/tags) | [查看](https://github.com/northsea4/mdcx-docker/blob/main/gui-base/mdcx-builtin.md) |  |  |
-| [mdcx-builtin-webtop-base](https://hub.docker.com/r/1525745393/mdcx-builtin-webtop-base/tags) | [查看](https://github.com/northsea4/mdcx-docker/blob/main/webtop-base/mdcx-builtin.md) | ✅ | ✅ |
+| [mdcx-builtin-gui-base](https://hub.docker.com/r/1525745393/mdcx-builtin-gui-base/tags) | [查看](https://github.com/1525745393/mdcx-docker/blob/main/gui-base/mdcx-builtin.md) |  |  |
+| [mdcx-builtin-webtop-base](https://hub.docker.com/r/1525745393/mdcx-builtin-webtop-base/tags) | [查看](https://github.com/1525745393/mdcx-docker/blob/main/webtop-base/mdcx-builtin.md) | ✅ | ✅ |
 
 
 ## 使用脚本部署
@@ -26,17 +26,17 @@
 
 使用curl:
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/northsea4/mdcx-docker/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/1525745393/mdcx-docker/main/install.sh)"
 ```
 使用wget:
 ```bash
-bash -c "$(wget https://raw.githubusercontent.com/northsea4/mdcx-docker/main/install.sh -O -)"
+bash -c "$(wget https://raw.githubusercontent.com/1525745393/mdcx-docker/main/install.sh -O -)"
 ```
 
 ## 手动部署
 
 ### mdcx-builtin-gui-base示例
-⚠️ 这里只给出一个简单的运行示例，建议查看 [部署说明](https://github.com/northsea4/mdcx-docker/blob/main/gui-base/mdcx-builtin.md) 了解更多细节。
+⚠️ 这里只给出一个简单的运行示例，建议查看 [部署说明](https://github.com/1525745393/mdcx-docker/blob/main/gui-base/mdcx-builtin.md) 了解更多细节。
 
 ```bash
 # 选一个合适的目录
@@ -69,7 +69,7 @@ docker run -d --name mdcx \
 浏览器访问 http://192.168.1.100:5800 使用。
 
 ### mdcx-builtin-webtop-base示例
-⚠️ 这里只给出一个简单的运行示例，建议查看 [部署说明](https://github.com/northsea4/mdcx-docker/blob/main/webtop-base/mdcx-builtin.md) 了解更多细节。
+⚠️ 这里只给出一个简单的运行示例，建议查看 [部署说明](https://github.com/1525745393/mdcx-docker/blob/main/webtop-base/mdcx-builtin.md) 了解更多细节。
 
 ```bash
 MDCX_DOCKER_DIR=/path/to/mdcx-docker
@@ -116,16 +116,16 @@ docker run -d --name mdcx \
 - 本项目贡献者编写该项目旨在学习docker和python应用在linux平台上的打包处理
 - 用户在使用本项目和项目成果前，请用户了解并遵守当地法律法规，如果本项目及项目成果使用过程中存在违反当地法律法规的行为，请勿使用该项目及项目成果
 - 法律后果及使用后果由使用者承担
-- [GPL LICENSE](https://github.com/northsea4/mdcx-docker/blob/main/LICENSE.md)
+- [GPL LICENSE](https://github.com/1525745393/mdcx-docker/blob/main/LICENSE.md)
 - 若用户不同意上述条款任意一条，请勿使用本项目和项目成果
 
 
 ## 更新日志
-请查看 [更新日志](https://github.com/northsea4/mdcx-docker/blob/main/CHANGELOG.md)
+请查看 [更新日志](https://github.com/1525745393/mdcx-docker/blob/main/CHANGELOG.md)
 
 
 ## FAQ
-请查看 [FAQ](https://github.com/northsea4/mdcx-docker/blob/main/FAQ.md)
+请查看 [FAQ](https://github.com/1525745393/mdcx-docker/blob/main/FAQ.md)
 
 
 ## 授权许可
