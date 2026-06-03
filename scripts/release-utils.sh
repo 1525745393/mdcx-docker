@@ -158,7 +158,12 @@ get_release_info() {
     return 1
   fi
 
-  release_version=$(generate_app_version "$published_at")
+  # 如果是纯数字版本(如 220260566)则直接使用，否则根据发布时间生成版本号
+  if [[ "$tag_name_from_json" =~ ^[0-9]+$ ]]; then
+    release_version="$tag_name_from_json"
+  else
+    release_version=$(generate_app_version "$published_at")
+  fi
 
   tar_url=$(printf '%s' "$release" | jq -r '.tarball_url')
   if [[ -z "$tar_url" || "$tar_url" == "null" ]]; then
