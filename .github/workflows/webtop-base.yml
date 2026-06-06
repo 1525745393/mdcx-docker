@@ -5,6 +5,11 @@ on:
     branches:
       - none
 
+  workflow_run:
+    workflows: [Image build-mdcx CI]
+    types: [completed]
+    branches: [main]
+
   workflow_dispatch:
     inputs:
       stage:
@@ -25,10 +30,12 @@ env:
   IMAGE_BASE: webtop-base
   IMAGE_KEY: webtop-base
   APT_SOURCE_HOST: ''
+  BASE_IMAGE_TAG: ${{ github.event.inputs.baseImage || 'ubuntu-kde-version-409dbb60' }}
   ENABLE_TG_NOTIFICATION: ${{ vars.ENABLE_TG_NOTIFICATION }}
 
 jobs:
   build:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - 
@@ -75,7 +82,7 @@ jobs:
           file: ${{ env.IMAGE_BASE }}/Dockerfile.${{ env.IMAGE_KEY }}
           build-args: |
             APT_SOURCE_HOST=${{ env.APT_SOURCE_HOST }}
-            BASE_IMAGE_TAG=${{ github.event.inputs.baseImage }}
+            BASE_IMAGE_TAG=${{ env.BASE_IMAGE_TAG }}
           platforms: |
             linux/amd64,linux/arm64
           push: true
@@ -98,7 +105,7 @@ jobs:
             📦 Dockerfile: ${{ env.IMAGE_BASE }}/Dockerfile.${{ env.IMAGE_KEY }}
             📦 Build Args:
                   APT_SOURCE_HOST=${{ env.APT_SOURCE_HOST }}
-                  BASE_IMAGE_TAG=${{ github.event.inputs.baseImage }}
+                  BASE_IMAGE_TAG=${{ env.BASE_IMAGE_TAG }}
 
             📦 Image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_KEY }}
             📦 Tags: ${{ steps.imageInfo.outputs.latest }}, ${{ steps.imageInfo.outputs.version }}

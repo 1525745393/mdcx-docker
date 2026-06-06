@@ -7,10 +7,10 @@ on:
     branches:
       - none
 
-  # workflow_run:
-  #   workflows: [Image build-mdcx CI]
-  #   types: [completed]
-  #   branches: [main]
+  workflow_run:
+    workflows: [Image webtop-base CI]
+    types: [completed]
+    branches: [main]
     
   workflow_dispatch:
     inputs:
@@ -36,12 +36,14 @@ env:
   IMAGE_BASE: webtop-base
   IMAGE_KEY: mdcx-builtin-webtop-base
   APT_SOURCE_HOST: ''
+  BASE_IMAGE_TAG: ${{ github.event.inputs.baseImage || 'v2-latest-pyqt6' }}
+  MDCX_BIN_IMAGE_TAG: ${{ github.event.inputs.binTag || 'v2-latest-pyqt6' }}
   ENABLE_TG_NOTIFICATION: ${{ vars.ENABLE_TG_NOTIFICATION }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 如果是workflow_run(即Image build-mdcx CI)触发的，只有当上游workflow成功时才运行
+    # 如果是workflow_run(即Image webtop-base CI)触发的，只有当上游workflow成功时才运行
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     steps:
       - 
@@ -54,10 +56,10 @@ jobs:
           STAGE=${{ github.event.inputs.stage }}
           STAGE=${STAGE:-prod}
 
-          BIN_TAG=${{ github.event.inputs.binTag }}
+          BIN_TAG=${{ env.MDCX_BIN_IMAGE_TAG }}
           BIN_TAG=${BIN_TAG:-v2-latest-pyqt6}
 
-          BASE_IMAGE_TAG=${{ github.event.inputs.baseImage }}
+          BASE_IMAGE_TAG=${{ env.BASE_IMAGE_TAG }}
           BASE_IMAGE_TAG=${BASE_IMAGE_TAG:-v2-latest-pyqt6}
 
           if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
